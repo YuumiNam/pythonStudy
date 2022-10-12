@@ -92,3 +92,41 @@ print(cat.name)
 print(dog.name)
 print(dog.master)
 
+
+
+
+#피보나치 구하기
+#피보나치 수는 f(0) = 0
+#n이 2 이상
+
+# F(2) = F(0) + F(1) = 0 + 1 = 1
+# F(3) = F(1) + F(2) = 1 + 1 = 2
+# F(4) = F(2) + F(3) = 1 + 2 = 3
+# F(5) = F(3) + F(4) = 2 + 3 = 5
+
+# F(1)0 1
+# F(2)0 1
+# 1 1
+# 1 2
+# 2 3
+# 3 5
+# 5 8
+# 8 13
+
+# f(n) = f(n-1) + f(n-2)
+
+def solution(n:int) : #n:int 타입을 나타내줌
+    answer = 1
+    first = 0
+    second = 1
+    #answer = first + second
+    #초기값 설정 : F(2) = F(0) + F(1) = 0 + 1 = 1
+
+    for i in range(2,n+1) :
+        tmp = second
+        answer = first + second
+        first = tmp
+        second = answer
+    return answer % 1234567
+
+print(solution(5))
